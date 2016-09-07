@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.new(task_params)
+    @task.done = false
     if @task.save
       redirect_to list_path(@task.list)
     else
@@ -17,7 +18,6 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
     @list = List.find(@task.list_id)
-
   end
 
   def update
