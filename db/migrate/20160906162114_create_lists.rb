@@ -3,7 +3,7 @@ class CreateLists < ActiveRecord::Migration[5.0]
     create_table :lists do |t|
       t.column :name, :string
 
-      t.timestampsrake
+      t.timestamps
     end
   end
 end
