@@ -16,11 +16,17 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if @list.save
-      redirect_to lists_path
-    else
-      render :new
+    respond_to do |format|
+      format.html do
+        if @list.save
+          redirect_to lists_path
+        else
+          render :new
+        end
+      end
+      format.json { render json: @resource }
     end
+
   end
 
   def edit

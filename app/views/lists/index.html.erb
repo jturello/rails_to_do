@@ -1,6 +1,6 @@
 <h1>Lists</h1>
 
-<ul>
+<ul id="to_do_list">
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
@@ -8,4 +8,4 @@
 
 <hr>
 
-<%= link_to "New List", new_list_path %>
+<%= link_to "New List", new_list_path, id: "new_link", remote: true %>

@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @list %>
 
-<%= form_for @list do |f| %>
+<%= form_for @list, remote: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name%>
   <%= f.submit %>
